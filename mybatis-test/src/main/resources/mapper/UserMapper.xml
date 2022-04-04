@@ -1,0 +1,13 @@
+<mapper namespace="test">
+    <select id="findUserById" parameterType="entity.User" resultType="entity.User" statementType="prepared">
+        select * from user where id = #{id}
+
+            <if test="userName!=null and userName!=''">
+                and user_name like '%${userName}%'
+                <if test="userName!=null and userName!=''">
+                    and id=1;
+                </if>
+            </if>
+
+    </select>
+</mapper>
